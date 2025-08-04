@@ -1,6 +1,6 @@
-// src/App.js - MODIFIED WITH WELCOME PAGE LOGIC
+// src/App.js - FINAL CORRECTED VERSION
 
-import { useState, useEffect } from "react"; // ADDED HOOKS
+import { useState } from "react"; // We only need useState
 import './App.css';
 
 // --- YOUR EXISTING IMAGE IMPORTS (UNCHANGED) ---
@@ -31,33 +31,26 @@ import linkedinIcon from './assets/linkedin.png';
 import githubIcon from './assets/github.png';
 
 function App() {
-  // --- NEW LOGIC FOR THE WELCOME PAGE ---
+  // --- SIMPLIFIED LOGIC ---
+  // This is the only thing we need. It's false by default.
   const [showPortfolio, setShowPortfolio] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const isMobile = windowWidth < 768; // Common breakpoint for mobile
-
-  // --- CONDITIONALLY RENDER THE WELCOME PAGE ---
-  // If it's a mobile device AND the user hasn't clicked "Enter", show this page.
-  if (isMobile && !showPortfolio) {
+  // --- THE CORRECT LOGIC FOR EVERYONE ---
+  // If the portfolio should NOT be shown yet...
+  if (!showPortfolio) {
+    // ...then return the Welcome Page for all users.
     return (
       <div className="welcome-mobile">
         <div className="welcome-content">
           <h2>Welcome!</h2>
-          <p>This portfolio is best viewed on a desktop or laptop.</p>
+          <p>This portfolio is best viewed on a desktop or desktop site on browser.</p>
+          {/* This button will set showPortfolio to true, revealing the main site */}
           <button onClick={() => setShowPortfolio(true)}>
             Enter Full Portfolio
           </button>
           
           <div className="other-links">
             <p>Or check me out here:</p>
-            {/* I have used your actual links from your portfolio */}
             <a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/rajeshmadhan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="/Rajesh Software Developer.pdf" target="_blank" rel="noopener noreferrer">My Resume</a>
@@ -69,7 +62,7 @@ function App() {
   }
 
   // --- YOUR ORIGINAL PORTFOLIO (UNCHANGED) ---
-  // If the screen is not mobile OR the user has clicked "Enter", show your full site.
+  // This part of the code will only run AFTER the button is clicked.
   return (
     <div className="app">
       <div className="background-container">
@@ -95,6 +88,8 @@ function App() {
         </div>
       </main>
 
+      {/* The rest of your portfolio sections remain here, unchanged... */}
+      
       <section className="about-section" id="about">
         <div className="about-background">
           <img src={aboutSvg} alt="About Background" className="about-bg-image" />

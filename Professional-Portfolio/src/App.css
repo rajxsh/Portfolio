@@ -445,13 +445,16 @@ html {
 
 /* --- NEW STYLES FOR MOBILE WELCOME PAGE (ADD THESE) --- */
 
+/* --- REPLACE IT WITH THIS CORRECTED STYLE --- */
 .welcome-mobile {
   min-height: 100vh;
+  width: 100vw; /* <-- THIS IS THE FIX */
+  box-sizing: border-box; /* <-- This is a good practice */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #2c3e50, #4ca1af); /* Dark gradient */
+  background: linear-gradient(to right, #2c3e50, #4ca1af); 
   text-align: center;
   padding: 20px;
   color: white;
