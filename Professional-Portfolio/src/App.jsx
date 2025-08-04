@@ -1,4 +1,9 @@
+// src/App.js - MODIFIED WITH WELCOME PAGE LOGIC
+
+import { useState, useEffect } from "react"; // ADDED HOOKS
 import './App.css';
+
+// --- YOUR EXISTING IMAGE IMPORTS (UNCHANGED) ---
 import logoSvg from './assets/Logo.svg';
 import firstOnePng from './assets/FirstOne.png';
 import aboutSvg from './assets/about1.png';
@@ -26,6 +31,45 @@ import linkedinIcon from './assets/linkedin.png';
 import githubIcon from './assets/github.png';
 
 function App() {
+  // --- NEW LOGIC FOR THE WELCOME PAGE ---
+  const [showPortfolio, setShowPortfolio] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const isMobile = windowWidth < 768; // Common breakpoint for mobile
+
+  // --- CONDITIONALLY RENDER THE WELCOME PAGE ---
+  // If it's a mobile device AND the user hasn't clicked "Enter", show this page.
+  if (isMobile && !showPortfolio) {
+    return (
+      <div className="welcome-mobile">
+        <div className="welcome-content">
+          <h2>Welcome!</h2>
+          <p>This portfolio is best viewed on a desktop or laptop.</p>
+          <button onClick={() => setShowPortfolio(true)}>
+            Enter Full Portfolio
+          </button>
+          
+          <div className="other-links">
+            <p>Or check me out here:</p>
+            {/* I have used your actual links from your portfolio */}
+            <a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/rajeshmadhan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="/Rajesh Software Developer.pdf" target="_blank" rel="noopener noreferrer">My Resume</a>
+          </div>
+
+        </div>
+      </div>
+    );
+  }
+
+  // --- YOUR ORIGINAL PORTFOLIO (UNCHANGED) ---
+  // If the screen is not mobile OR the user has clicked "Enter", show your full site.
   return (
     <div className="app">
       <div className="background-container">
@@ -35,7 +79,6 @@ function App() {
         <div className="logo">
           <img src={logoSvg} alt="Logo" />
         </div>
-        {/* --- NAVBAR LINKS REORDERED --- */}
         <nav className="nav-links">
           <a href="#about" className="active">About</a>
           <a href="#skills">Skills</a>
@@ -85,7 +128,6 @@ function App() {
                 </div>
               </div>
             </div>
-            {/* Other tech categories */}
             <div className="tech-category">
               <span className="category-label">Frameworks :</span>
               <div className="tech-items">
@@ -206,7 +248,6 @@ function App() {
               <img src={resumePreview} alt="Resume Preview" className="resume-preview-image" />
             </div>
             <div className="resume-actions">
-              {/* --- UPDATED LINK --- */}
               <a href="/Rajesh Software Developer.pdf" download className="resume-btn">Download</a>
               <a href="/Rajesh Software Developer.pdf" target="_blank" rel="noopener noreferrer" className="resume-btn">View Online</a>
             </div>
@@ -217,7 +258,6 @@ function App() {
               <img src={coverPreview} alt="Cover Letter Preview" className="resume-preview-image" />
             </div>
             <div className="resume-actions">
-              {/* --- UPDATED LINK --- */}
               <a href="/Rajesh Cover Letter.pdf" download className="resume-btn">Download</a>
               <a href="/Rajesh Cover Letter.pdf" target="_blank" rel="noopener noreferrer" className="resume-btn">View Online</a>
             </div>
@@ -235,11 +275,11 @@ function App() {
           <div className="contact-details">
             <div className="contact-item">
               <img src={emailIcon} alt="Email" className="contact-icon" />
-              <a href="mailto:rajeshmahan29@gmail.com">rajeshmahan29@gmail.com</a>
+              <a href="mailto:rajeshmadhan29@gmail.com">rajeshmadhan29@gmail.com</a>
             </div>
             <div className="contact-item">
               <img src={linkedinIcon} alt="LinkedIn" className="contact-icon" />
-              <a href="https://linkedin.com/in/rajeshmahan" target="_blank" rel="noopener noreferrer">linkedin.com/in/rajeshmahan</a>
+              <a href="https://linkedin.com/in/rajeshmadhan" target="_blank" rel="noopener noreferrer">linkedin.com/in/rajeshmadhan</a>
             </div>
             <div className="contact-item">
               <img src={githubIcon} alt="GitHub" className="contact-icon" />
@@ -248,7 +288,7 @@ function App() {
             
             <form 
               className="contact-form" 
-              action="mailto:rajeshmahan29@gmail.com" 
+              action="mailto:rajeshmadhan29@gmail.com" 
               method="post" 
               encType="text/plain"
             >

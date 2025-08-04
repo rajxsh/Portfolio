@@ -1,6 +1,8 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@700&display=swap');
 
+/* --- YOUR EXISTING STYLES (UNCHANGED) --- */
+
 /* --- GLOBAL & BASE STYLES --- */
 body {
   margin: 0;
@@ -10,7 +12,6 @@ body {
   overflow-x: hidden;
 }
 
-/* BUTTERY SMOOTH SCROLLING IS APPLIED HERE */
 html {
   scroll-behavior: smooth;
   height: 100%;
@@ -228,11 +229,6 @@ html {
 .projects-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: #000; margin: 0 0 60px 0; text-align: center; }
 .projects-grid { display: flex; flex-direction: column; gap: 120px; margin-bottom: 80px; width: 100%; }
 .project-card { display: flex; align-items: center; justify-content: center; gap: 80px; max-width: 1200px; margin: 0 auto; }
-
-/* THIS IS THE FIX. The default flex-direction is 'row', which is what we need for both. */
-/* The previous 'row-reverse' on the chatbot was causing the issue. */
-/* No special rules are needed now, as the JSX order is correct for both. */
-
 .project-info { flex: 1 1 45%; text-align: left; }
 .project-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: #111; margin: 0 0 20px 0; }
 .project-description p { font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #222; margin: 0 0 10px 0; }
@@ -444,4 +440,89 @@ html {
   .contact-form { align-items: center; }
   .contact-form label { text-align: center; }
   .contact-form input { width: 90%; text-align: center;}
+}
+
+
+/* --- NEW STYLES FOR MOBILE WELCOME PAGE (ADD THESE) --- */
+
+.welcome-mobile {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #2c3e50, #4ca1af); /* Dark gradient */
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.welcome-content {
+  font-family: 'Playfair Display', serif;
+}
+
+.welcome-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  margin-bottom: 2.5rem;
+  max-width: 400px;
+}
+
+.welcome-content button {
+  padding: 15px 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.welcome-content button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.other-links {
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 25px;
+  width: 90%;
+  max-width: 350px;
+}
+
+.other-links p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.other-links a {
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 8px 16px;
+  font-family: 'Inter', sans-serif;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.other-links a:hover {
+  background-color: #fff;
+  color: #2c3e50;
 }
