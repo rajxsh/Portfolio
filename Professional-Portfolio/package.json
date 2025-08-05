@@ -1,17 +1,14 @@
 {
-  "name": "portfolio",
+  "name": "professional-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "// This is the full URL where your site will live": "",
   "homepage": "https://rajxsh.github.io/Portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "// This script ensures your project is built before deploying": "",
     "predeploy": "npm run build",
-    "// This script sends the 'dist' folder to your gh-pages branch": "",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -19,8 +16,8 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^4.6.0",
     "gh-pages": "^6.3.0",
-    "vite": "^5.2.0"
+    "vite": "^7.0.4"
   }
 }
