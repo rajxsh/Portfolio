@@ -1,8 +1,6 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@700&display=swap');
 
-/* --- YOUR EXISTING STYLES (UNCHANGED) --- */
-
 /* --- GLOBAL & BASE STYLES --- */
 body {
   margin: 0;
@@ -131,6 +129,7 @@ html {
 .about-section,
 .tech-stack-section,
 .projects-section,
+.resume-section,
 .contact-section {
     position: relative;
     min-height: 100vh;
@@ -224,7 +223,7 @@ html {
 .tech-item { display: flex; align-items: center; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 700; color: #000; }
 .tech-icon { width: 32px; height: 32px; object-fit: contain; }
 
-/* --- PROJECTS SECTION (CORRECTED) --- */
+/* --- PROJECTS SECTION --- */
 .projects-content { max-width: 1400px; width: 100%; z-index: 1; text-align: center; display: flex; flex-direction: column; align-items: center; }
 .projects-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: #000; margin: 0 0 60px 0; text-align: center; }
 .projects-grid { display: flex; flex-direction: column; gap: 120px; margin-bottom: 80px; width: 100%; }
@@ -254,7 +253,6 @@ html {
   overflow: hidden;
   background: transparent;
 }
-.resume-background { top: 0; }
 .resume-container { display: flex; flex-wrap: wrap; gap: 70px; justify-content: center; position: relative; z-index: 1; }
 .resume-card { background: #f0f0f0; padding: 50px 40px; width: 420px; height: 500px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); border: none; }
 .resume-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: #1e2a3a; background: #b8d8ef; padding: 10px 40px; text-align: center; border-radius: 6px; }
@@ -264,194 +262,47 @@ html {
 .resume-btn { background: #b8d8ef; color: #1e2a3a; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 400; padding: 15px 30px; text-decoration: none; text-align: center; transition: background-color 0.3s ease; border: none; border-radius: 6px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
 .resume-btn:hover { background-color: #a9cbe2; }
 
-/* --- CONTACT SECTION STYLES (FINAL) --- */
-.contact-section {
-    background: transparent;
-}
-.contact-bg-image {
-    object-fit: cover;
-}
-.contact-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    z-index: 1;
-    max-width: 800px;
-    color: #000;
-}
-.contact-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-.contact-subtitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    text-align: center;
-    max-width: 500px;
-    margin-top: 0;
-    margin-bottom: 40px;
-    line-height: 1.5;
-}
-.contact-details {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 35px;
-}
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-}
-.contact-icon {
-    width: 55px;
-    height: 55px;
-    object-fit: contain;
-}
-.contact-item a {
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-.contact-item a:hover {
-    color: #fff;
-}
-.contact-form {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-    margin-top: 20px;
-}
-.contact-form label {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    white-space: nowrap;
-}
-.contact-form input {
-    flex-grow: 1;
-    background-color: #d3b99d; 
-    border: 1px solid #c9a987; 
-    padding: 14px 18px;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    border-radius: 8px; 
-    color: #4a3f35;
-}
-.contact-form input::placeholder {
-    color: #7b6d61;
-    opacity: 1;
-}
-.send-btn {
-    background-color: #c9a987;
-    border: 1px solid #b39570;
-    color: #000;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    padding: 14px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.send-btn:hover {
-    background-color: #b39570;
-}
+/* --- CONTACT SECTION --- */
+.contact-section { background: transparent; }
+.contact-bg-image { object-fit: cover; }
+.contact-content { display: flex; flex-direction: column; align-items: center; gap: 20px; z-index: 1; max-width: 800px; color: #000; }
+.contact-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 700; margin-bottom: 5px; }
+.contact-subtitle { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; text-align: center; max-width: 500px; margin-top: 0; margin-bottom: 40px; line-height: 1.5; }
+.contact-details { display: flex; flex-direction: column; align-items: flex-start; gap: 35px; }
+.contact-item { display: flex; align-items: center; gap: 25px; font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+.contact-icon { width: 55px; height: 55px; object-fit: contain; }
+.contact-item a { color: #000; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+.contact-item a:hover { color: #fff; }
+.contact-form { display: flex; align-items: center; gap: 15px; width: 100%; margin-top: 20px; }
+.contact-form label { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; white-space: nowrap; }
+.contact-form input { flex-grow: 1; background-color: #d3b99d; border: 1px solid #c9a987; padding: 14px 18px; font-family: 'Playfair Display', serif; font-size: 1.2rem; border-radius: 8px; color: #4a3f35; }
+.contact-form input::placeholder { color: #7b6d61; opacity: 1; }
+.send-btn { background-color: #c9a987; border: 1px solid #b39570; color: #000; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem; padding: 14px 25px; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; }
+.send-btn:hover { background-color: #b39570; }
 
 
 /* --- RESPONSIVE STYLES --- */
-@media (max-width: 1440px) {
-  .hero-content h1 { font-size: 4rem; }
-  .hero-content h2 { font-size: 1.6rem; }
-}
-@media (max-width: 1200px) {
-  .hero-content h1 { font-size: 3.5rem; }
-  .hero-content h2 { font-size: 1.5rem; }
-  .projects-grid { gap: 80px; }
-  .project-card { gap: 40px; }
-  .project-title { font-size: 1.8rem; }
-  .project-description p { font-size: 1rem; }
-}
-@media (max-width: 1024px) {
-  .about-content { padding: 80px 40px; }
-  .about-title { font-size: 50px; }
-  .about-text p { font-size: 24px; }
-  .tech-category { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .category-label { min-width: auto; }
-  .tech-items { justify-content: flex-start; }
-}
-@media (max-width: 900px) {
-  .project-card,
-  .project-card.expense-tracker,
-  .project-card.chatbot {
-    flex-direction: column !important;
-    gap: 40px;
-    align-items: center;
-  }
-  .project-info { text-align: center; }
-  .resume-container { flex-direction: column; align-items: center; gap: 40px; }
-  .resume-card { width: 90%; max-width: 420px; }
-}
-@media (max-width: 768px) {
-  .navbar { padding: 0 20px; }
-  .nav-links { gap: 10px; }
-  .nav-links a { font-size: 1rem; padding: 6px 12px; }
-  .hero-content { padding: 0 20px; }
-  .hero-content h1 { font-size: 3rem; }
-  .hero-content h2 { font-size: 1.4rem; }
-  .about-content { padding: 60px 20px; }
-  .about-title { font-size: 40px; }
-  .about-text p { font-size: 20px; }
-  .tech-content { padding: 0 20px; }
-  .tech-title { font-size: 32px; }
-  .category-label, .tech-item { font-size: 16px; }
-  .projects-content { padding: 60px 20px; }
-  .projects-title { font-size: 2rem; }
-  .cta-button { padding: 14px 28px; font-size: 1rem; }
-  .contact-form { flex-direction: column; align-items: stretch; gap: 10px;}
-}
-@media (max-width: 480px) {
-  .hero-content h1 { font-size: 2.5rem; }
-  .hero-content h2 { font-size: 1.2rem; }
-  .about-title { font-size: 32px; }
-  .about-text p { font-size: 18px; }
-  .tech-category { padding: 15px 0; }
-  .tech-items { gap: 20px; }
-  .category-label, .tech-item { font-size: 14px; }
-  .projects-title { font-size: 1.8rem; }
-  .project-title { font-size: 1.5rem; }
-  .project-description p { font-size: 0.9rem; }
-  .resume-section { padding: 60px 20px; }
-  .resume-card { padding: 40px 25px; height: auto; }
-  .resume-title { font-size: 2rem; }
-  .resume-btn { font-size: 1rem; padding: 12px 20px; }
-  .contact-title { font-size: 2.5rem; }
-  .contact-subtitle { font-size: 1.3rem; }
-  .contact-details { gap: 25px; align-items: center;}
-  .contact-item { flex-direction: column; gap: 8px; text-align: center; }
-  .contact-form { align-items: center; }
-  .contact-form label { text-align: center; }
-  .contact-form input { width: 90%; text-align: center;}
-}
+@media (max-width: 1440px) { .hero-content h1 { font-size: 4rem; } .hero-content h2 { font-size: 1.6rem; } }
+@media (max-width: 1200px) { .hero-content h1 { font-size: 3.5rem; } .hero-content h2 { font-size: 1.5rem; } .projects-grid { gap: 80px; } .project-card { gap: 40px; } .project-title { font-size: 1.8rem; } .project-description p { font-size: 1rem; } }
+@media (max-width: 1024px) { .about-content { padding: 80px 40px; } .about-title { font-size: 50px; } .about-text p { font-size: 24px; } .tech-category { flex-direction: column; align-items: flex-start; gap: 20px; } .category-label { min-width: auto; } .tech-items { justify-content: flex-start; } }
+@media (max-width: 900px) { .project-card, .project-card.expense-tracker, .project-card.chatbot { flex-direction: column !important; gap: 40px; align-items: center; } .project-info { text-align: center; } .resume-container { flex-direction: column; align-items: center; gap: 40px; } .resume-card { width: 90%; max-width: 420px; } }
+@media (max-width: 768px) { .navbar { padding: 0 20px; } .nav-links { gap: 10px; } .nav-links a { font-size: 1rem; padding: 6px 12px; } .hero-content { padding: 0 20px; } .hero-content h1 { font-size: 3rem; } .hero-content h2 { font-size: 1.4rem; } .about-content { padding: 60px 20px; } .about-title { font-size: 40px; } .about-text p { font-size: 20px; } .tech-content { padding: 0 20px; } .tech-title { font-size: 32px; } .category-label, .tech-item { font-size: 16px; } .projects-content { padding: 60px 20px; } .projects-title { font-size: 2rem; } .cta-button { padding: 14px 28px; font-size: 1rem; } .contact-form { flex-direction: column; align-items: stretch; gap: 10px;} }
+@media (max-width: 480px) { .hero-content h1 { font-size: 2.5rem; } .hero-content h2 { font-size: 1.2rem; } .about-title { font-size: 32px; } .about-text p { font-size: 18px; } .tech-category { padding: 15px 0; } .tech-items { gap: 20px; } .category-label, .tech-item { font-size: 14px; } .projects-title { font-size: 1.8rem; } .project-title { font-size: 1.5rem; } .project-description p { font-size: 0.9rem; } .resume-section { padding: 60px 20px; } .resume-card { padding: 40px 25px; height: auto; } .resume-title { font-size: 2rem; } .resume-btn { font-size: 1rem; padding: 12px 20px; } .contact-title { font-size: 2.5rem; } .contact-subtitle { font-size: 1.3rem; } .contact-details { gap: 25px; align-items: center;} .contact-item { flex-direction: column; gap: 8px; text-align: center; } .contact-form { align-items: center; } .contact-form label { text-align: center; } .contact-form input { width: 90%; text-align: center;} }
 
-
-/* --- NEW STYLES FOR MOBILE WELCOME PAGE (ADD THESE) --- */
+/*
+=================================================
+--- WELCOME PAGE STYLES (UPDATED FOR ALIGNMENT) ---
+=================================================
+*/
 
 .welcome-mobile {
   min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #2c3e50, #4ca1af); /* Dark gradient */
+  background: linear-gradient(to right, #2c3e50, #4ca1af); 
   text-align: center;
   padding: 20px;
   color: white;
@@ -459,31 +310,37 @@ html {
 }
 
 .welcome-content {
+  /* UPDATED */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px; /* Adds consistent spacing between elements */
   font-family: 'Playfair Display', serif;
 }
 
 .welcome-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 3rem; /* Slightly larger like the image */
+  margin: 0; /* Let gap handle the spacing */
 }
 
 .welcome-content p {
   font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   color: #f0f0f0;
-  margin-bottom: 2.5rem;
-  max-width: 400px;
+  max-width: 450px;
+  margin: 0;
+  line-height: 1.6; /* UPDATED - Better spacing for two lines */
 }
 
 .welcome-content button {
   padding: 15px 30px;
   font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 1rem; /* UPDATED - Adjusted size */
+  font-weight: 600; /* UPDATED - Less bold than 'bold' */
   color: #333;
   background-color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px; /* UPDATED - More rounded corners */
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -495,23 +352,37 @@ html {
 }
 
 .other-links {
-  margin-top: 40px;
+  margin-top: 20px; /* UPDATED - Adjusted spacing */
   border-top: 1px solid rgba(255, 255, 255, 0.3);
-  padding-top: 25px;
+  padding-top: 35px; /* UPDATED - Adjusted spacing */
   width: 90%;
   max-width: 350px;
+  /* UPDATED - Use flexbox for alignment */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
 }
 
 .other-links p {
-  margin-bottom: 20px;
+  margin: 0; /* Let gap handle spacing */
   font-size: 1rem;
   color: #ddd;
+  font-family: 'Inter', sans-serif;
+}
+
+/* NEW - Container for the link buttons */
+.link-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Space between buttons */
 }
 
 .other-links a {
+  /* No changes needed here, flexbox handles the layout */
   display: inline-block;
-  margin: 5px 10px;
-  padding: 8px 16px;
+  padding: 8px 24px; /* UPDATED - More horizontal padding */
   font-family: 'Inter', sans-serif;
   background-color: transparent;
   color: #fff;
