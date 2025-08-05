@@ -31,6 +31,10 @@ import githubIcon from './assets/github.png';
 function App() {
   const [showPortfolio, setShowPortfolio] = useState(false);
 
+  // Use import.meta.env.BASE_URL for all public files!
+  const resumeUrl = `${import.meta.env.BASE_URL}RajeshSoftwareDeveloper.pdf`;
+  const coverLetterUrl = `${import.meta.env.BASE_URL}RajeshCoverLetter.pdf`;
+
   if (!showPortfolio) {
     return (
       <div className="welcome-mobile">
@@ -47,11 +51,10 @@ function App() {
           
           <div className="other-links">
             <p>Or check me out here:</p>
-            {/* This new div will help us align the buttons perfectly */}
             <div className="link-buttons">
               <a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a href="https://linkedin.com/in/rajeshmadhan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="/Rajesh Software Developer.pdf" target="_blank" rel="noopener noreferrer">My Resume</a>
+              <a href={resumeUrl} target="_blank" rel="noopener noreferrer">My Resume</a>
             </div>
           </div>
         </div>
@@ -239,8 +242,8 @@ function App() {
               <img src={resumePreview} alt="Resume Preview" className="resume-preview-image" />
             </div>
             <div className="resume-actions">
-              <a href="/Rajesh Software Developer.pdf" download className="resume-btn">Download</a>
-              <a href="/Rajesh Software Developer.pdf" target="_blank" rel="noopener noreferrer" className="resume-btn">View Online</a>
+              <a href={resumeUrl} download className="resume-btn">Download</a>
+              <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="resume-btn">View Online</a>
             </div>
           </div>
           <div className="resume-card">
@@ -249,8 +252,8 @@ function App() {
               <img src={coverPreview} alt="Cover Letter Preview" className="resume-preview-image" />
             </div>
             <div className="resume-actions">
-              <a href="/Rajesh Cover Letter.pdf" download className="resume-btn">Download</a>
-              <a href="/Rajesh Cover Letter.pdf" target="_blank" rel="noopener noreferrer" className="resume-btn">View Online</a>
+              <a href={coverLetterUrl} download className="resume-btn">Download</a>
+              <a href={coverLetterUrl} target="_blank" rel="noopener noreferrer" className="resume-btn">View Online</a>
             </div>
           </div>
         </div>
