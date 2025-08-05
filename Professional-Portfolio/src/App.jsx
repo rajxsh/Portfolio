@@ -1,6 +1,4 @@
-// src/App.js - FINAL CORRECTED VERSION
-
-import { useState } from "react"; // We only need useState
+import { useState } from "react";
 import './App.css';
 
 // --- YOUR EXISTING IMAGE IMPORTS (UNCHANGED) ---
@@ -31,38 +29,36 @@ import linkedinIcon from './assets/linkedin.png';
 import githubIcon from './assets/github.png';
 
 function App() {
-  // --- SIMPLIFIED LOGIC ---
-  // This is the only thing we need. It's false by default.
   const [showPortfolio, setShowPortfolio] = useState(false);
 
-  // --- THE CORRECT LOGIC FOR EVERYONE ---
-  // If the portfolio should NOT be shown yet...
   if (!showPortfolio) {
-    // ...then return the Welcome Page for all users.
     return (
       <div className="welcome-mobile">
         <div className="welcome-content">
           <h2>Welcome!</h2>
-          <p>This portfolio is best viewed on a desktop or desktop site on browser.</p>
-          {/* This button will set showPortfolio to true, revealing the main site */}
+          <p>
+            This portfolio is best viewed on a desktop or
+            <br />
+            desktop site on browser.
+          </p>
           <button onClick={() => setShowPortfolio(true)}>
             Enter Full Portfolio
           </button>
           
           <div className="other-links">
             <p>Or check me out here:</p>
-            <a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://linkedin.com/in/rajeshmadhan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="/Rajesh Software Developer.pdf" target="_blank" rel="noopener noreferrer">My Resume</a>
+            {/* This new div will help us align the buttons perfectly */}
+            <div className="link-buttons">
+              <a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://linkedin.com/in/rajeshmadhan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="/Rajesh Software Developer.pdf" target="_blank" rel="noopener noreferrer">My Resume</a>
+            </div>
           </div>
-
         </div>
       </div>
     );
   }
 
-  // --- YOUR ORIGINAL PORTFOLIO (UNCHANGED) ---
-  // This part of the code will only run AFTER the button is clicked.
   return (
     <div className="app">
       <div className="background-container">
