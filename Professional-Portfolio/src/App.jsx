@@ -1,37 +1,40 @@
 import { useState } from "react";
-import './App.css';
+// FIX: The path to the CSS file was also incorrect in the previous code I sent.
+// It should be relative to this App.jsx file.
+import './App.css'; 
 
-// --- YOUR EXISTING IMAGE IMPORTS (UNCHANGED) ---
-import logoSvg from './assets/Logo.svg';
-import firstOnePng from './assets/FirstOne.png';
-import aboutSvg from './assets/about1.png';
-import techStackSvg from './assets/newskills.png';
-import javaPng from './assets/Java.png';
-import sqlPng from './assets/sql.png';
-import springSvg from './assets/Spring.png';
-import springSecuritySvg from './assets/spring security.svg';
-import reactSvg from './assets/react.svg';
-import bootstrapPng from './assets/bootstrap.png';
-import gitPng from './assets/Git.png';
-import dockerPng from './assets/Docker.png';
-import azurePng from './assets/Azure.png';
-import uiDesignPng from './assets/Ui.png';
-import jpaPng from './assets/Jpa.png';
-import expenseDemoPng from './assets/ExpenseDemo.png';
-import chatPng from './assets/Chat.png';
-import projectsBgPng from './assets/Projects.png';
-import resumeSvg from './assets/resumebg.png';
-import resumePreview from './assets/Resume.png';
-import coverPreview from './assets/CV.png';
-import contactBg from './assets/Contact.svg';
-import emailIcon from './assets/mail.png';
-import linkedinIcon from './assets/linkedin.png';
-import githubIcon from './assets/github.png';
+// --- FIX: ALL IMAGE IMPORT PATHS CORRECTED ---
+// We need to go up one level from `src` to `../` to find the `assets` folder.
+import logoSvg from '../assets/Logo.svg';
+import firstOnePng from '../assets/FirstOne.png';
+import aboutSvg from '../assets/about1.png';
+import techStackSvg from '../assets/newskills.png';
+import javaPng from '../assets/Java.png';
+import sqlPng from '../assets/sql.png';
+import springSvg from '../assets/Spring.png';
+import springSecuritySvg from '../assets/spring security.svg';
+import reactSvg from '../assets/react.svg';
+import bootstrapPng from '../assets/bootstrap.png';
+import gitPng from '../assets/Git.png';
+import dockerPng from '../assets/Docker.png';
+import azurePng from '../assets/Azure.png';
+import uiDesignPng from '../assets/Ui.png';
+import jpaPng from '../assets/Jpa.png';
+import expenseDemoPng from '../assets/ExpenseDemo.png';
+import chatPng from '../assets/Chat.png';
+import projectsBgPng from '../assets/Projects.png';
+import resumeSvg from '../assets/resumebg.png';
+import resumePreview from '../assets/Resume.png';
+import coverPreview from '../assets/CV.png';
+import contactBg from '../assets/Contact.svg';
+import emailIcon from '../assets/mail.png';
+import linkedinIcon from '../assets/linkedin.png';
+import githubIcon from '../assets/github.png';
 
 function App() {
   const [showPortfolio, setShowPortfolio] = useState(false);
 
-  // Use import.meta.env.BASE_URL for all public files!
+  // This part is correct, it references the public folder correctly for deployment.
   const resumeUrl = `${import.meta.env.BASE_URL}RajeshSoftwareDeveloper.pdf`;
   const coverLetterUrl = `${import.meta.env.BASE_URL}RajeshCoverLetter.pdf`;
 
@@ -86,8 +89,6 @@ function App() {
           <h2>Java, Spring Boot, SQL, React</h2>
         </div>
       </main>
-
-      {/* The rest of your portfolio sections remain here, unchanged... */}
       
       <section className="about-section" id="about">
         <div className="about-background">
@@ -112,70 +113,37 @@ function App() {
             <div className="tech-category">
               <span className="category-label">Languages :</span>
               <div className="tech-items">
-                <div className="tech-item">
-                  <img src={javaPng} alt="Java" className="tech-icon" />
-                  <span>Java</span>
-                </div>
-                <div className="tech-item">
-                  <img src={sqlPng} alt="SQL" className="tech-icon" />
-                  <span>SQL</span>
-                </div>
+                <div className="tech-item"><img src={javaPng} alt="Java" className="tech-icon" /><span>Java</span></div>
+                <div className="tech-item"><img src={sqlPng} alt="SQL" className="tech-icon" /><span>SQL</span></div>
               </div>
             </div>
             <div className="tech-category">
               <span className="category-label">Frameworks :</span>
               <div className="tech-items">
-                <div className="tech-item">
-                  <img src={springSvg} alt="Spring Boot" className="tech-icon" />
-                  <span>Spring Boot</span>
-                </div>
-                <div className="tech-item">
-                  <img src={jpaPng} alt="JPA/Hibernate" className="tech-icon" />
-                  <span>JPA/Hibernate</span>
-                </div>
-                <div className="tech-item">
-                  <img src={springSecuritySvg} alt="Spring Security" className="tech-icon" />
-                  <span>Spring Security</span>
-                </div>
+                <div className="tech-item"><img src={springSvg} alt="Spring Boot" className="tech-icon" /><span>Spring Boot</span></div>
+                <div className="tech-item"><img src={jpaPng} alt="JPA/Hibernate" className="tech-icon" /><span>JPA/Hibernate</span></div>
+                <div className="tech-item"><img src={springSecuritySvg} alt="Spring Security" className="tech-icon" /><span>Spring Security</span></div>
               </div>
             </div>
             <div className="tech-category">
               <span className="category-label">Front-End :</span>
               <div className="tech-items">
-                <div className="tech-item">
-                  <img src={reactSvg} alt="React JS" className="tech-icon" />
-                  <span>React JS</span>
-                </div>
-                <div className="tech-item">
-                  <img src={bootstrapPng} alt="Bootstrap" className="tech-icon" />
-                  <span>Bootstrap</span>
-                </div>
+                <div className="tech-item"><img src={reactSvg} alt="React JS" className="tech-icon" /><span>React JS</span></div>
+                <div className="tech-item"><img src={bootstrapPng} alt="Bootstrap" className="tech-icon" /><span>Bootstrap</span></div>
               </div>
             </div>
             <div className="tech-category">
               <span className="category-label">Tools :</span>
               <div className="tech-items">
-                <div className="tech-item">
-                  <img src={gitPng} alt="Git" className="tech-icon" />
-                  <span>Git</span>
-                </div>
-                <div className="tech-item">
-                  <img src={dockerPng} alt="Docker" className="tech-icon" />
-                  <span>Docker</span>
-                </div>
-                <div className="tech-item">
-                  <img src={azurePng} alt="Azure" className="tech-icon" />
-                  <span>Azure</span>
-                </div>
+                <div className="tech-item"><img src={gitPng} alt="Git" className="tech-icon" /><span>Git</span></div>
+                <div className="tech-item"><img src={dockerPng} alt="Docker" className="tech-icon" /><span>Docker</span></div>
+                <div className="tech-item"><img src={azurePng} alt="Azure" className="tech-icon" /><span>Azure</span></div>
               </div>
             </div>
             <div className="tech-category">
               <span className="category-label">Hidden Skills :</span>
               <div className="tech-items">
-                <div className="tech-item">
-                  <img src={uiDesignPng} alt="UI Design" className="tech-icon" />
-                  <span>UI Design</span>
-                </div>
+                <div className="tech-item"><img src={uiDesignPng} alt="UI Design" className="tech-icon" /><span>UI Design</span></div>
               </div>
             </div>
           </div>
@@ -183,9 +151,7 @@ function App() {
       </section>
 
       <section className="projects-section" id="projects">
-        <div className="projects-background">
-          <img src={projectsBgPng} alt="Projects Background" className="projects-bg-image" />
-        </div>
+        <div className="projects-background"><img src={projectsBgPng} alt="Projects Background" className="projects-bg-image" /></div>
         <div className="projects-content">
           <h1 className="projects-title">Projects</h1>
           <div className="projects-grid">
@@ -198,32 +164,23 @@ function App() {
                   <p>★ <a href="#" className="project-link">Demo Link</a></p>
                 </div>
               </div>
-              <div className="project-image">
-                <img src={expenseDemoPng} alt="Expense Tracker Demo" />
-              </div>
+              <div className="project-image"><img src={expenseDemoPng} alt="Expense Tracker Demo" /></div>
             </div>
             <div className="project-card chatbot">
-              <div className="project-image">
-                <img src={chatPng} alt="Spring AI ChatBot Demo" />
-              </div>
+              <div className="project-image"><img src={chatPng} alt="Spring AI ChatBot Demo" /></div>
               <div className="project-info">
                 <h3 className="project-title">Spring AI ChatBot</h3>
                 <div className="project-description">
                   <p>★ A full-stack AI chatbot app for interactive learning, built with Spring Boot, React, and OpenAI.</p>
                   <p>★ Features real-time Q&A, a modern UI, and easy deployment with Docker.</p>
-                  <p>★ <a href="#" className="project-link"> Demo Link</a></p>
+                  <p>★ <a href="#" className="project-link">Demo Link</a></p>
                 </div>
               </div>
             </div>
           </div>
           <div className="projects-cta">
             <p>For more Projects you may find here:</p>
-            <a 
-              href="https://github.com/rajxsh" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="cta-button"
-            >
+            <a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer" className="cta-button">
               <span className="cta-icon">★</span>
               CHECK IT OUT HERE
             </a>
@@ -232,15 +189,11 @@ function App() {
       </section>
 
       <section className="resume-section" id="resume">
-        <div className="resume-background">
-          <img src={resumeSvg} alt="Resume page background" className="resume-bg-image" />
-        </div>
+        <div className="resume-background"><img src={resumeSvg} alt="Resume page background" className="resume-bg-image" /></div>
         <div className="resume-container">
           <div className="resume-card">
             <div className="resume-title">Resume</div>
-            <div className="resume-preview">
-              <img src={resumePreview} alt="Resume Preview" className="resume-preview-image" />
-            </div>
+            <div className="resume-preview"><img src={resumePreview} alt="Resume Preview" className="resume-preview-image" /></div>
             <div className="resume-actions">
               <a href={resumeUrl} download className="resume-btn">Download</a>
               <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="resume-btn">View Online</a>
@@ -248,9 +201,7 @@ function App() {
           </div>
           <div className="resume-card">
             <div className="resume-title">Cover Letter</div>
-            <div className="resume-preview">
-              <img src={coverPreview} alt="Cover Letter Preview" className="resume-preview-image" />
-            </div>
+            <div className="resume-preview"><img src={coverPreview} alt="Cover Letter Preview" className="resume-preview-image" /></div>
             <div className="resume-actions">
               <a href={coverLetterUrl} download className="resume-btn">Download</a>
               <a href={coverLetterUrl} target="_blank" rel="noopener noreferrer" className="resume-btn">View Online</a>
@@ -260,9 +211,7 @@ function App() {
       </section>
 
       <section className="contact-section" id="contact">
-        <div className="contact-background">
-          <img src={contactBg} alt="Contact background" className="contact-bg-image" />
-        </div>
+        <div className="contact-background"><img src={contactBg} alt="Contact background" className="contact-bg-image" /></div>
         <div className="contact-content">
           <h1 className="contact-title">Contact Me</h1>
           <p className="contact-subtitle">I'm open to new opportunities and collaborations. Feel free to reach out!</p>
@@ -280,21 +229,9 @@ function App() {
               <a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer">github.com/rajxsh</a>
             </div>
             
-            <form 
-              className="contact-form" 
-              action="mailto:rajeshmadhan29@gmail.com" 
-              method="post" 
-              encType="text/plain"
-            >
-              <label htmlFor="message-input">Mail Me (If Interested) :</label>
-              <input 
-                type="text" 
-                id="message-input"
-                name="message" 
-                placeholder="Type your message here..."
-              />
-              <button type="submit" className="send-btn">Send</button>
-            </form>
+            <div className="contact-cta">
+              <p>Click the email address above or connect with me on LinkedIn!</p>
+            </div>
 
           </div>
         </div>
