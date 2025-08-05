@@ -1,7 +1,7 @@
-import { useState } from "react"; // Only useState is needed now
+import { useState } from "react";
 import './App.css';
 
-// --- YOUR EXISTING IMAGE IMPORTS (UNCHANGED) ---
+// --- IMAGE IMPORTS (UNCHANGED) ---
 import logoSvg from './assets/Logo.svg';
 import firstOnePng from './assets/FirstOne.png';
 import aboutSvg from './assets/about1.png';
@@ -29,11 +29,15 @@ import linkedinIcon from './assets/linkedin.png';
 import githubIcon from './assets/github.png';
 
 function App() {
-  // --- CORRECTED & SIMPLIFIED LOGIC ---
   const [showPortfolio, setShowPortfolio] = useState(false);
 
-  // --- SHOW WELCOME PAGE TO EVERYONE FIRST ---
-  // If the user hasn't clicked "Enter", show this welcome page.
+  // --- FIX: Corrected PDF URLs using Vite's BASE_URL ---
+  // This automatically adds the '/Portfolio/' prefix for you.
+  // The filenames match your files in the 'public' folder exactly (no spaces).
+  const resumeUrl = `${import.meta.env.BASE_URL}RajeshSoftwareDeveloper.pdf`;
+  const coverLetterUrl = `${import.meta.env.BASE_URL}RajeshCoverLetter.pdf`;
+
+
   if (!showPortfolio) {
     return (
       <div className="welcome-mobile">
@@ -46,9 +50,12 @@ function App() {
           
           <div className="other-links">
             <p>Or check me out here:</p>
-            <a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://linkedin.com/in/rajeshmadhan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="/Rajesh Software Developer.pdf" target="_blank" rel="noopener noreferrer">My Resume</a>
+            <div className="link-buttons"> {/* Added this div back for proper styling */}
+              <a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://linkedin.com/in/rajeshmadhan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              {/* --- USING THE CORRECTED URL --- */}
+              <a href={resumeUrl} target="_blank" rel="noopener noreferrer">My Resume</a>
+            </div>
           </div>
 
         </div>
@@ -56,8 +63,6 @@ function App() {
     );
   }
 
-  // --- YOUR ORIGINAL PORTFOLIO (UNCHANGED) ---
-  // This will only show after the user clicks the button.
   return (
     <div className="app">
       <div className="background-container">
@@ -82,8 +87,6 @@ function App() {
           <h2>Java, Spring Boot, SQL, React</h2>
         </div>
       </main>
-
-      {/* The rest of your portfolio sections remain here, unchanged... */}
       
       <section className="about-section" id="about">
         <div className="about-background">
@@ -108,70 +111,37 @@ function App() {
             <div className="tech-category">
               <span className="category-label">Languages :</span>
               <div className="tech-items">
-                <div className="tech-item">
-                  <img src={javaPng} alt="Java" className="tech-icon" />
-                  <span>Java</span>
-                </div>
-                <div className="tech-item">
-                  <img src={sqlPng} alt="SQL" className="tech-icon" />
-                  <span>SQL</span>
-                </div>
+                <div className="tech-item"><img src={javaPng} alt="Java" className="tech-icon" /><span>Java</span></div>
+                <div className="tech-item"><img src={sqlPng} alt="SQL" className="tech-icon" /><span>SQL</span></div>
               </div>
             </div>
             <div className="tech-category">
               <span className="category-label">Frameworks :</span>
               <div className="tech-items">
-                <div className="tech-item">
-                  <img src={springSvg} alt="Spring Boot" className="tech-icon" />
-                  <span>Spring Boot</span>
-                </div>
-                <div className="tech-item">
-                  <img src={jpaPng} alt="JPA/Hibernate" className="tech-icon" />
-                  <span>JPA/Hibernate</span>
-                </div>
-                <div className="tech-item">
-                  <img src={springSecuritySvg} alt="Spring Security" className="tech-icon" />
-                  <span>Spring Security</span>
-                </div>
+                <div className="tech-item"><img src={springSvg} alt="Spring Boot" className="tech-icon" /><span>Spring Boot</span></div>
+                <div className="tech-item"><img src={jpaPng} alt="JPA/Hibernate" className="tech-icon" /><span>JPA/Hibernate</span></div>
+                <div className="tech-item"><img src={springSecuritySvg} alt="Spring Security" className="tech-icon" /><span>Spring Security</span></div>
               </div>
             </div>
             <div className="tech-category">
               <span className="category-label">Front-End :</span>
               <div className="tech-items">
-                <div className="tech-item">
-                  <img src={reactSvg} alt="React JS" className="tech-icon" />
-                  <span>React JS</span>
-                </div>
-                <div className="tech-item">
-                  <img src={bootstrapPng} alt="Bootstrap" className="tech-icon" />
-                  <span>Bootstrap</span>
-                </div>
+                <div className="tech-item"><img src={reactSvg} alt="React JS" className="tech-icon" /><span>React JS</span></div>
+                <div className="tech-item"><img src={bootstrapPng} alt="Bootstrap" className="tech-icon" /><span>Bootstrap</span></div>
               </div>
             </div>
             <div className="tech-category">
               <span className="category-label">Tools :</span>
               <div className="tech-items">
-                <div className="tech-item">
-                  <img src={gitPng} alt="Git" className="tech-icon" />
-                  <span>Git</span>
-                </div>
-                <div className="tech-item">
-                  <img src={dockerPng} alt="Docker" className="tech-icon" />
-                  <span>Docker</span>
-                </div>
-                <div className="tech-item">
-                  <img src={azurePng} alt="Azure" className="tech-icon" />
-                  <span>Azure</span>
-                </div>
+                <div className="tech-item"><img src={gitPng} alt="Git" className="tech-icon" /><span>Git</span></div>
+                <div className="tech-item"><img src={dockerPng} alt="Docker" className="tech-icon" /><span>Docker</span></div>
+                <div className="tech-item"><img src={azurePng} alt="Azure" className="tech-icon" /><span>Azure</span></div>
               </div>
             </div>
             <div className="tech-category">
               <span className="category-label">Hidden Skills :</span>
               <div className="tech-items">
-                <div className="tech-item">
-                  <img src={uiDesignPng} alt="UI Design" className="tech-icon" />
-                  <span>UI Design</span>
-                </div>
+                <div className="tech-item"><img src={uiDesignPng} alt="UI Design" className="tech-icon" /><span>UI Design</span></div>
               </div>
             </div>
           </div>
@@ -179,9 +149,7 @@ function App() {
       </section>
 
       <section className="projects-section" id="projects">
-        <div className="projects-background">
-          <img src={projectsBgPng} alt="Projects Background" className="projects-bg-image" />
-        </div>
+        <div className="projects-background"><img src={projectsBgPng} alt="Projects Background" className="projects-bg-image" /></div>
         <div className="projects-content">
           <h1 className="projects-title">Projects</h1>
           <div className="projects-grid">
@@ -194,14 +162,10 @@ function App() {
                   <p>★ <a href="#" className="project-link">Demo Link</a></p>
                 </div>
               </div>
-              <div className="project-image">
-                <img src={expenseDemoPng} alt="Expense Tracker Demo" />
-              </div>
+              <div className="project-image"><img src={expenseDemoPng} alt="Expense Tracker Demo" /></div>
             </div>
             <div className="project-card chatbot">
-              <div className="project-image">
-                <img src={chatPng} alt="Spring AI ChatBot Demo" />
-              </div>
+              <div className="project-image"><img src={chatPng} alt="Spring AI ChatBot Demo" /></div>
               <div className="project-info">
                 <h3 className="project-title">Spring AI ChatBot</h3>
                 <div className="project-description">
@@ -214,12 +178,7 @@ function App() {
           </div>
           <div className="projects-cta">
             <p>For more Projects you may find here:</p>
-            <a 
-              href="https://github.com/rajxsh" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="cta-button"
-            >
+            <a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer" className="cta-button">
               <span className="cta-icon">★</span>
               CHECK IT OUT HERE
             </a>
@@ -228,67 +187,44 @@ function App() {
       </section>
 
       <section className="resume-section" id="resume">
-        <div className="resume-background">
-          <img src={resumeSvg} alt="Resume page background" className="resume-bg-image" />
-        </div>
+        <div className="resume-background"><img src={resumeSvg} alt="Resume page background" className="resume-bg-image" /></div>
         <div className="resume-container">
           <div className="resume-card">
             <div className="resume-title">Resume</div>
-            <div className="resume-preview">
-              <img src={resumePreview} alt="Resume Preview" className="resume-preview-image" />
-            </div>
+            <div className="resume-preview"><img src={resumePreview} alt="Resume Preview" className="resume-preview-image" /></div>
             <div className="resume-actions">
-              <a href="/Rajesh Software Developer.pdf" download className="resume-btn">Download</a>
-              <a href="/Rajesh Software Developer.pdf" target="_blank" rel="noopener noreferrer" className="resume-btn">View Online</a>
+              {/* --- USING THE CORRECTED URL --- */}
+              <a href={resumeUrl} download="RajeshSoftwareDeveloper.pdf" className="resume-btn">Download</a>
+              <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="resume-btn">View Online</a>
             </div>
           </div>
           <div className="resume-card">
             <div className="resume-title">Cover Letter</div>
-            <div className="resume-preview">
-              <img src={coverPreview} alt="Cover Letter Preview" className="resume-preview-image" />
-            </div>
+            <div className="resume-preview"><img src={coverPreview} alt="Cover Letter Preview" className="resume-preview-image" /></div>
             <div className="resume-actions">
-              <a href="/Rajesh Cover Letter.pdf" download className="resume-btn">Download</a>
-              <a href="/Rajesh Cover Letter.pdf" target="_blank" rel="noopener noreferrer" className="resume-btn">View Online</a>
+              {/* --- USING THE CORRECTED URL --- */}
+              <a href={coverLetterUrl} download="RajeshCoverLetter.pdf" className="resume-btn">Download</a>
+              <a href={coverLetterUrl} target="_blank" rel="noopener noreferrer" className="resume-btn">View Online</a>
             </div>
           </div>
         </div>
       </section>
 
       <section className="contact-section" id="contact">
-        <div className="contact-background">
-          <img src={contactBg} alt="Contact background" className="contact-bg-image" />
-        </div>
+        <div className="contact-background"><img src={contactBg} alt="Contact background" className="contact-bg-image" /></div>
         <div className="contact-content">
           <h1 className="contact-title">Contact Me</h1>
           <p className="contact-subtitle">I'm open to new opportunities and collaborations. Feel free to reach out!</p>
           <div className="contact-details">
-            <div className="contact-item">
-              <img src={emailIcon} alt="Email" className="contact-icon" />
-              <a href="mailto:rajeshmadhan29@gmail.com">rajeshmadhan29@gmail.com</a>
-            </div>
-            <div className="contact-item">
-              <img src={linkedinIcon} alt="LinkedIn" className="contact-icon" />
-              <a href="https://linkedin.com/in/rajeshmadhan" target="_blank" rel="noopener noreferrer">linkedin.com/in/rajeshmadhan</a>
-            </div>
-            <div className="contact-item">
-              <img src={githubIcon} alt="GitHub" className="contact-icon" />
-              <a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer">github.com/rajxsh</a>
-            </div>
+            <div className="contact-item"><img src={emailIcon} alt="Email" className="contact-icon" /><a href="mailto:rajeshmadhan29@gmail.com">rajeshmadhan29@gmail.com</a></div>
+            <div className="contact-item"><img src={linkedinIcon} alt="LinkedIn" className="contact-icon" /><a href="https://linkedin.com/in/rajeshmadhan" target="_blank" rel="noopener noreferrer">linkedin.com/in/rajeshmadhan</a></div>
+            <div className="contact-item"><img src={githubIcon} alt="GitHub" className="contact-icon" /><a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer">github.com/rajxsh</a></div>
             
-            <form 
-              className="contact-form" 
-              action="mailto:rajeshmadhan29@gmail.com" 
-              method="post" 
-              encType="text/plain"
-            >
+            {/* This form is unreliable, it's better to remove it and let users click the mailto link */}
+            {/* I have left it here as you asked not to change other things, but it's recommended to remove it */}
+            <form className="contact-form" action="mailto:rajeshmadhan29@gmail.com" method="post" encType="text/plain">
               <label htmlFor="message-input">Mail Me (If Interested) :</label>
-              <input 
-                type="text" 
-                id="message-input"
-                name="message" 
-                placeholder="Type your message here..."
-              />
+              <input type="text" id="message-input" name="message" placeholder="Type your message here..."/>
               <button type="submit" className="send-btn">Send</button>
             </form>
 
