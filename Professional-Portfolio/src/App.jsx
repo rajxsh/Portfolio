@@ -159,7 +159,7 @@ function App() {
                 <div className="project-description">
                   <p>★ A secure web app to track and manage expenses with user authentication and advanced filtering.</p>
                   <p>★ Built with (Spring Boot), (MySQL), (Thymeleaf), and (Bootstrap).</p>
-                  <p>★ <a href="#" className="project-link">Demo Link</a></p>
+                  {/* <p>★ <a href="#" className="project-link">Demo Link</a></p> */}
                 </div>
               </div>
               <div className="project-image"><img src={expenseDemoPng} alt="Expense Tracker Demo" /></div>
@@ -171,7 +171,7 @@ function App() {
                 <div className="project-description">
                   <p>★ A full-stack AI chatbot app for interactive learning, built with Spring Boot, React, and OpenAI.</p>
                   <p>★ Features real-time Q&A, a modern UI, and easy deployment with Docker.</p>
-                  <p>★ <a href="#" className="project-link"> Demo Link</a></p>
+                  {/* <p>★ <a href="#" className="project-link"> Demo Link</a></p> */}
                 </div>
               </div>
             </div>
