@@ -197,6 +197,8 @@ html {
   margin: 0 0 50px 0;
   line-height: 1.7;
   max-width: 1200px;
+  /* --- MODIFICATION: Justified text for a cleaner look --- */
+  text-align: justify;
 }
 
 /* --- TECH STACK SECTION --- */
@@ -302,7 +304,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #2c3e50, #4ca1af); 
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
   text-align: center;
   padding: 20px;
   color: white;

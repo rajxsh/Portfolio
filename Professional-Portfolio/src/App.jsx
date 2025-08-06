@@ -47,7 +47,7 @@ function App() {
           <button onClick={() => setShowPortfolio(true)}>
             Enter Full Portfolio
           </button>
-          
+
           <div className="other-links">
             <p>Or check me out here:</p>
             <div className="link-buttons"> {/* Added this div back for proper styling */}
@@ -87,7 +87,7 @@ function App() {
           <h2>Java, Spring Boot, SQL, React</h2>
         </div>
       </main>
-      
+
       <section className="about-section" id="about">
         <div className="about-background">
           <img src={aboutSvg} alt="About Background" className="about-bg-image" />
@@ -95,8 +95,8 @@ function App() {
         <div className="about-content">
           <h1 className="about-title">About Me...</h1>
           <div className="about-text">
-            <p>★ Hi, I'm Rajesh — a meticulous software engineer. I build scalable cloud applications for healthcare and finance using Java, Spring Boot, REST APIs, and SQL databases.</p>
-            <p>★ I enjoy building strong systems, working with others, and converting real problems into simple-to-use solutions. Constantly learning and building. Let's make something amazing together!</p>
+            <p>★ Hi, I'm Rajesh — a software engineer passionate about building strong, scalable systems. With 8 months of professional experience in the healthcare industry, I have a proven ability to develop applications using Java, Spring Boot, REST APIs, and SQL databases.</p>
+            <p>★ I thrive on working with others to turn real-world problems into simple, elegant solutions. My hands-on experience has taught me the importance of writing clean code and constantly learning. I'm excited about finding my next challenge and making an impact. Let's connect!</p>
           </div>
         </div>
       </section>
@@ -219,7 +219,7 @@ function App() {
             <div className="contact-item"><img src={emailIcon} alt="Email" className="contact-icon" /><a href="mailto:rajeshmadhan29@gmail.com">rajeshmadhan29@gmail.com</a></div>
             <div className="contact-item"><img src={linkedinIcon} alt="LinkedIn" className="contact-icon" /><a href="https://linkedin.com/in/rajeshmadhan" target="_blank" rel="noopener noreferrer">linkedin.com/in/rajeshmadhan</a></div>
             <div className="contact-item"><img src={githubIcon} alt="GitHub" className="contact-icon" /><a href="https://github.com/rajxsh" target="_blank" rel="noopener noreferrer">github.com/rajxsh</a></div>
-            
+
             {/* This form is unreliable, it's better to remove it and let users click the mailto link */}
             {/* I have left it here as you asked not to change other things, but it's recommended to remove it */}
             <form className="contact-form" action="mailto:rajeshmadhan29@gmail.com" method="post" encType="text/plain">
