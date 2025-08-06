@@ -170,20 +170,24 @@ html {
 
 /* --- ABOUT SECTION --- */
 .about-section {
-  align-items: flex-start;
-  justify-content: flex-start;
+  /* This centers the content block within the section */
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 }
 .about-content {
-  max-width: 1500px;
+  /* This controls the size and padding of your text block */
+  max-width: 1200px; /* Sets a maximum width for readability */
   width: 100%;
-  padding-top: 70px;
+  padding: 0 40px; /* Adds space on the left and right */
+  box-sizing: border-box; /* Ensures padding is included in the width */
   z-index: 1;
-  text-align: left;
+  text-align: left; /* Keeps your paragraphs aligned to the left */
 }
 .about-title {
   font-family: 'Playfair Display', serif;
-  font-size: 70px;
-  font-weight: 700;
+  font-size: 50px;
+  font-weight: 600;
   color: #000;
   margin: 0 0 50px 0;
   line-height: 1.1;
@@ -191,14 +195,13 @@ html {
 }
 .about-text p {
   font-family: 'Playfair Display', serif;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 400;
   color: #000;
   margin: 0 0 50px 0;
   line-height: 1.7;
-  max-width: 1200px;
-  /* --- MODIFICATION: Justified text for a cleaner look --- */
-  text-align: justify;
+  /* MODIFICATION: The text-align: justify from before is removed */
+  text-align: left;
 }
 
 /* --- TECH STACK SECTION --- */
